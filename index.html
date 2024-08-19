@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Conversion</title>
+
+    <script>
+        function convertType(value) {
+    if (value.toLowerCase() === 'true') {
+        return true;
+    } else if (value.toLowerCase() === 'false') {
+        return false;
+    }
+
+    if (!isNaN(value)) {
+        return value.includes('.') ? parseFloat(value) : parseInt(value);
+    }
+
+    return value;
+}
+
+let input1 = prompt("String typedagi malumotni kiriting");
+let input2 = prompt("Number typedagi malumotni kiriting");
+let input3 = prompt("boolean typedagi malumotni kiriting");
+let input4 =prompt("Hamasini togri kiritgningizga ishonchigiz komilmi");
+
+let convertedValue1 = convertType(input1);
+let convertedValue2 = convertType(input2);
+let convertedValue3 = convertType(input3);
+
+
+console.log(`Converted Value 1: ${convertedValue1} (Type: ${typeof convertedValue1})`);
+console.log(`Converted Value 2: ${convertedValue2} (Type: ${typeof convertedValue2})`);
+console.log(`Converted Value 3: ${convertedValue3} (Type: ${typeof convertedValue3})`);
+
+    </script>
+</body>
+</html>
